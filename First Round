@@ -1,0 +1,14 @@
+def shift_string_left(text, shift_by):
+text_length = len(text)
+rotated_text = [''] * text_length
+shift_by = shift_by % text_length
+for i in range(text_length):
+new_position = i - shift_by
+if new_position < 0:
+new_position += text_length
+rotated_text[new_position] = text[i]
+return ''.join(rotated_text)
+example_string = "abcdef"
+shift_amount = 2
+rotated_result = shift_string_left(example_string, shift_amount)
+print(rotated_result)
